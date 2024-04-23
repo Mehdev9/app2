@@ -11,3 +11,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('profil', function () { 
+    return view('profil');
+});
+Route::get('listing', function () { 
+    return view('listing');
+});
