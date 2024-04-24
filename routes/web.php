@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    HomeController,
+    ListingController,
+    ProfilController,
+    PostController
+};
 
 Route::get('/', function () {
     return view('welcome');
@@ -10,10 +16,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('profil', function () { 
-    return view('profil');
-});
-Route::get('listing', function () { 
-    return view('listing');
-});
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/listing', [ListingController::class, 'index'])->name('home');
+// Route::get('listing', function () { 
+    //     return view('listing');
+    // });
+    Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
+    Route::post('/profil/{id}', [ProfilController::class, 'show'])->name('profil');
+    // Route::get('profil', function () { 
+        //     return view('profil');
+        // });
+        Route::get('creation-annonce', [PostController::class, 'index'])->name('creation-annonce');
