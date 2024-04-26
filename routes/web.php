@@ -21,9 +21,9 @@ Route::get('/listing', [ListingController::class, 'index'])->name('home');
 // Route::get('listing', function () { 
     //     return view('listing');
     // });
-    Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
-    Route::post('/profil/{id}', [ProfilController::class, 'show'])->name('profil');
+Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
+Route::post('/profil/{id}', [ProfilController::class, 'show'])->name('profil');
     // Route::get('profil', function () { 
         //     return view('profil');
         // });
-        Route::get('creation-annonce', [PostController::class, 'index'])->name('creation-annonce');
+Route::get('creation-annonce', [PostController::class, 'index'])->name('creation-annonce');
