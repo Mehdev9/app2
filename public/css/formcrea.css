@@ -70,7 +70,10 @@ form legend div{
     margin-top: 5%;
     margin-bottom: 5%;
     display: flex;
+    flex-direction: column-reverse;
     justify-content:center;
+    width: 80%;
+    margin: auto;
 }
 .icon{
     padding: 2%;
@@ -94,6 +97,17 @@ svg{
 }
 .radio{
     visibility: hidden;
+}
+#valider{
+    margin-bottom: 3%;
+    margin-top: 3%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color:rgb(20, 210, 243);
+}
+#retour{
+    margin-bottom: 3%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgb(252, 21, 98);
 }
 
 

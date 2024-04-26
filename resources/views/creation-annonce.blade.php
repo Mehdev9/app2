@@ -149,9 +149,10 @@
 
 {{-- =====================================================================infos============================================= --}}
 
-                <div id="btn">
-                    <button type="submit" class="btn btn-danger">Retour </button>
-                    <button type="submit" class="btn btn-success">Poster mon annonce</button>
+<div class="row" id="btn">
+                
+                    <button type="submit" class="btn btn-danger" id="retour">Retour </button>
+                    <button type="submit" class="btn btn-success" id="valider">Poster mon annonce</button>
                 </div>
             </fieldset>
         </form>
