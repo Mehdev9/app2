@@ -14,6 +14,7 @@
         "vite": "^5.0"
     },
     "dependencies": {
-        "admin-lte": "3.0"
+        "admin-lte": "3.0",
+        "animate.css": "^4.1.1"
     }
 }

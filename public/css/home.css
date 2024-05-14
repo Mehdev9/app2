@@ -1,9 +1,13 @@
 body {
-    background-image: url('/img/kamehouse.jpg');
-    background-size:cover;
+  background-image: url('/img/appart.jpg');
+  background-size: cover;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
     /* background-repeat: no-repeat; */
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
+    margin-bottom: 5%;
 }
 .container div{
     margin-top: 5%;
@@ -14,7 +18,7 @@ body {
     box-shadow: #7BC9FF 0px 5px 15px;
     border: 1px solid #7BC9FF;
     /* margin: 5%; */
-    background-color: rgba(255, 255, 255, 0.671);
+    background-color: rgba(255, 255, 255, 0.753);
   }
 #presentation{
     text-align: center;
@@ -22,15 +26,15 @@ body {
     box-shadow: #7BC9FF 0px 5px 15px;
     border: 1px solid #7BC9FF;
     /* margin: 5%; */
-    background-color: rgba(255, 255, 255, 0.671);
+    background-color: rgba(255, 255, 255, 0.753);
   }
 #actu{
     text-align: center;
     border-radius: 20px 20px 20px 20px;
     box-shadow: #7BC9FF 0px 5px 15px;
     border: 1px solid #7BC9FF;
-    /* margin: 5%; */
-    background-color: rgba(255, 255, 255, 0.671);
+    margin-bottom: 5%;
+    background-color: rgba(255, 255, 255, 0.753);
   }
   .navbar{
     margin: 5%;
