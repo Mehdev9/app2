@@ -14,7 +14,7 @@
 <div class="container">
 
 
-    <form class="form" method="POST">
+    <form class="form" method="POST" enctype='multipart/form-data' action="{{route('addAnnonce')}}">
         @csrf
         <fieldset>
             <h1 id="titre">Créer votre annonce</h1>
@@ -22,7 +22,7 @@
             
             {{-- =========================================================type============================================ --}}
             
-            <h3 id="leg1">Type de bien</h3>
+            <h3 class="mb-4" id="leg1">Type de bien</h3>
             <div id="type">
                 
                 
@@ -70,7 +70,7 @@
             {{-- =====================================================================style============================================= --}}
 
 
-            <h3 id="leg2">style du bien</h3>
+            <h3 class="mb-4 mt-4" id="leg2">style du bien</h3>
             <div id="style">
                 <div>
                     <input class="radio" type="radio" id="contemporain" name="style" value="contemporain" />
@@ -101,23 +101,23 @@
             
             {{-- =====================================================================infos============================================= --}}
 
-            <h3>infos du bien</h3>
+            <h3 class="mb-4 mt-4">infos du bien</h3>
             <div class="row" id="infos">
                 <div class="mb-3">
                     <label for="titre" class="form-label">Image du bien </label>
-                    <input type="file" class="form-control" id="titre">
+                    <input type="file" class="form-control" id="titre" name="image">
                 </div>
                 <div class="mb-3">
                     <label for="prix" class="form-label">Prix (€) :</label>
-                    <input type="number" class="form-control" id="prix">
+                    <input type="number" class="form-control" id="prix" name="prix">
                 </div>
                 <div class="mb-3">
                     <label for="surface" class="form-label">Surface (m²) :</label>
-                    <input type="number" class="form-control" id="surface">
+                    <input type="number" class="form-control" id="surface" name="surface">
                 </div>
                 <div class="mb-3">
                     <label for="nbpiece" class="form-label">Nombre de pièces :</label>
-                    <input type="text" class="form-control" id="nbpiece">
+                    <input type="number" class="form-control" id="nbpiece" name="piece">
                 </div>
                 <div>
                     <label for="meuble" class="form-label">Meublé :</label>
@@ -128,11 +128,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="article" class="form-label">description du bien :</label>
-                    <textarea class="form-control" id="article"></textarea>
+                    <textarea class="form-control" id="article" name="desc"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="mots" class="form-label">Mots-clefs (5 mots) :</label>
-                    <input type="text" class="form-control" id="mots"></input>
+                    <input type="text" class="form-control" id="mots" name="motClef"></input>
                 </div>
             </div>
             
@@ -140,8 +140,8 @@
             
             <div class="row" id="btn">
                 
-                <button type="submit" class="btn btn-danger" id="retour">Retour </button>
                 <button type="submit" class="btn btn-success" id="valider">Poster mon annonce</button>
+                <button type="button" class="btn btn-danger" id="retour"><a href="home">Retour </a></button>
             </div>
         </fieldset>
     </form>

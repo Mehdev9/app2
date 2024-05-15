@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
+            $table->string('style');
+            $table->string('image');
+            $table->integer('prix');
+            $table->integer('surface');
+            $table->integer('piece');
+            $table->string('meuble');
+            $table->string('desc');
+            $table->string('motClef');
             $table->timestamps();
         });
     }

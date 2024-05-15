@@ -20,7 +20,7 @@ class ListingController extends Controller
      */
     public function create()
     {
-        //
+        return view('creation-annonce');
     }
 
     /**
@@ -28,7 +28,44 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $type = $request->string('type');
+        
+        // $style = $request->string('style');
+        
+        // $image = $request->file('image');
+        
+        // $prix = $request->string('prix');
+        
+        // $surface = $request->string('surface');
+        
+        // $piece = $request->string('piece');
+        
+        // $meuble = $request->string('meuble');
+        
+        // $desc = $request->string('desc');
+        
+        // $clef = $request->string('mot-clef');
+        // return [$type,$style,$image,$prix,$surface,$piece,$meuble,$desc,$clef,];
+
+        $filename = '';
+        if ($request->hasFile('image')) {
+            $filename = $request->getSchemeAndHttpHost() . '/images' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('images'), $filename);
+        }
+
+        $listings = listing::create([
+            'type' => $request->type,
+            'style' => $request->style,
+            'image' => 'images/' . $filename,
+            'prix' => $request->prix,
+            'surface' => $request->surface,
+            'piece' => $request->piece,
+            'meuble' => $request->meuble,
+            'desc' => $request->desc,
+            'motClef' => $request->motClef,
+        ]);
+
+        return redirect('listing');
     }
 
     /**
