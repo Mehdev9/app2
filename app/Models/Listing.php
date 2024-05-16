@@ -18,5 +18,6 @@ class Listing extends Model
         'desc',
         'motClef',
     ];
+    protected $dates = ['created_at'];
     use HasFactory;
 }

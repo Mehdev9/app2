@@ -12,7 +12,8 @@ class ListingController extends Controller
      */
     public function index()
     {
-        return view('listing');
+        $listings = listing::paginate(10);
+        return view('listing', compact('listings'));
     }
 
     /**
@@ -34,11 +35,11 @@ class ListingController extends Controller
         
         // $image = $request->file('image');
         
-        // $prix = $request->string('prix');
+        // $prix = $request->integer('prix');
         
-        // $surface = $request->string('surface');
+        // $surface = $request->integer('surface');
         
-        // $piece = $request->string('piece');
+        // $piece = $request->integer('piece');
         
         // $meuble = $request->string('meuble');
         
@@ -49,7 +50,7 @@ class ListingController extends Controller
 
         $filename = '';
         if ($request->hasFile('image')) {
-            $filename = $request->getSchemeAndHttpHost() . '/images' . time() . '.' . $request->image->extension();
+            $filename =  time() . '.' . $request->image->extension();
             $request->image->move(public_path('images'), $filename);
         }
 
@@ -63,6 +64,7 @@ class ListingController extends Controller
             'meuble' => $request->meuble,
             'desc' => $request->desc,
             'motClef' => $request->motClef,
+            'created' => $request->created
         ]);
 
         return redirect('listing');
