@@ -22,6 +22,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/listing', [ListingController::class, 'index'])->name('listing');
 Route::get('creation-annonce', [ListingController::class, 'create'])->name('creation-annonce');
 Route::post('/creation-annonce/save', [ListingController::class, 'store'])->name('addAnnonce');
+Route::get('/deconnexion', [ProfilController::class, 'deconnexion']);
 // Route::get('listing', function () { 
     //     return view('listing');
     // });

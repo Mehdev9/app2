@@ -43,13 +43,16 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="true" aria-expanded="false">Profil</a>
+                            aria-haspopup="true" aria-expanded="false">Compte</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="login">Connexion</a>
-                                <a class="dropdown-item" href="register">inscription</a>
-                                {{-- <a class="dropdown-item" href="#">Something else here</a> --}}
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="home">Déconnexion</a>
+                                    @guest
+                                    <a class="dropdown-item" href="register">inscription</a>
+                                    <a class="dropdown-item" href="login">Connexion</a>
+                                        
+                                    @endguest
+                                    <a class="dropdown-item" href="profil">Mon compte</a>
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="deconnexion">Déconnexion</a>
                             </div>
                         </li>
                     </ul>

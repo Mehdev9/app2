@@ -18,4 +18,10 @@ class ProfilController extends Controller
                 'user' => $user
             ]);
         }
+
+        public function deconnexion()
+        {
+            auth()->logout();
+            return redirect('/home');
+        }
 }
