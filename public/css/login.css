@@ -7,7 +7,7 @@ body {
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
   }
-  h1{
+  h1, h3{
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
     text-align: center;
@@ -19,4 +19,25 @@ body {
     padding: 2%;
     margin-bottom: 3%;
   }
+  .compte label{
+    border-radius: 10% 10% 10% 10%;
+    padding: 20px;
+    box-shadow: #7BC9FF 0px 5px 15px;
+    margin: 30px;
+  }
+  .radio{
+    visibility: hidden;
+}
+  input[name="compte"]:checked+label{
+    background-color: #0be64d;
+  }
+  input[name="compte"]:hover+label{
+    background-color: #0be64d;
+    transition: 1s;
+  }
+  svg{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
   

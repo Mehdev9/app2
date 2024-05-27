@@ -1,5 +1,30 @@
 @extends('layout')
-<h1>hello</h1>
+<link rel="stylesheet" href="css/profil.css">
+@include('includes/nav')
+<h1 class="text-light" >Mon compte locotrust</h1>
 
-{{-- <h2>{{ $user }}</h2> --}}
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <h5>Bienvenue sur votre profil {{\Illuminate\Support\Facades\Auth::user()->name}} !</h5>
+        </div>
+        <div class="col-3"></div>
 
+        <div class="row">
+
+            <div class="col-6">
+                <p>Voici vos annonces actuellement en ligne :</p>
+                @foreach ($listings as $listing)
+                    <ul>
+                        <li>{{$listing->type}}</li>
+                    </ul>
+                @endforeach
+                
+
+
+            </div>
+            <div class="col-6"></div>
+        </div>
+
+</div>

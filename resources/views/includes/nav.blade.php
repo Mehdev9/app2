@@ -50,10 +50,13 @@
                                     <a class="dropdown-item" href="login">Connexion</a>
                                         
                                     @endguest
+                                    @auth
                                     <a class="dropdown-item" href="profil">Mon compte</a>
+                                    <a class="dropdown-item" href="creation-annonce">Créer une annonce</a>
                                     <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="deconnexion">Déconnexion</a>
-                            </div>
+                            </div>      
+                                    @endauth
                         </li>
                     </ul>
 

@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Listing;
 use Illuminate\Http\Request;
 
 class ProfilController extends Controller
 {
         public function index()
         {
-            return view('profil');
+            $listings = listing::all();
+            return view('profil', compact('listings'));
         }
 
         public function show($id)
