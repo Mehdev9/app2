@@ -7,6 +7,7 @@ use App\Http\Controllers\{
     ProfilController,
     PostController
 };
+use App\Http\Middleware\AuthAnnonce;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,7 +21,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/listing', [ListingController::class, 'index'])->name('listing');
-Route::get('creation-annonce', [ListingController::class, 'create'])->name('creation-annonce');
+Route::get('creation-annonce', [ListingController::class, 'create'])->name('creation-annonce'); //->middleware(AuthAnnonce::class, 'handle');
 Route::post('/creation-annonce/save', [ListingController::class, 'store'])->name('addAnnonce');
 Route::get('/deconnexion', [ProfilController::class, 'deconnexion']);
 // Route::get('listing', function () { 

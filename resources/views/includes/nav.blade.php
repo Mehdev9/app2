@@ -56,7 +56,8 @@
                                     <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="deconnexion">Déconnexion</a>
                             </div>      
-                                    @endauth
+                            <li class="text-light position-absolute end-0 p-2">{{Illuminate\Support\Facades\Auth::user()->name}}</li>
+                            @endauth
                         </li>
                     </ul>
 

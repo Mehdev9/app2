@@ -15,6 +15,10 @@ class AuthAnnonce
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if ($request->input('token') !== 'my-secret-token') {
+            return redirect('login');
+        }
+        
         return $next($request);
     }
 }
