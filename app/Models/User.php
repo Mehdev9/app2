@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return '';
     }
+
+    public function listings()
+    {
+        return $this->hasMany(Listing::class, 'user_id');
+    }
 }

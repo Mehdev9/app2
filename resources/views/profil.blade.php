@@ -13,18 +13,14 @@
 
         <div class="row">
 
-            <div class="col-6">
                 <p>Voici vos annonces actuellement en ligne :</p>
                 @foreach ($listings as $listing)
                     <ul>
-                        <li><img style="width: 90px; height: 50px " src="{{asset($listing->image)}}" alt="maison"> Annonces n°{{$listing->id}}: {{$listing->type}} au prix de {{$listing->prix}}€. </li>
+                        <li><img style="width: 90px; height: 50px;" src="{{asset($listing->image)}}" alt="maison"> Annonce n°{{ $listing->id }} :  {{ $listing->type }} {{ $listing->style }} au prix de {{ $listing->prix }}€   :: Annonce postée le {{$listing->created_at->format('d/m/Y')}}  </li>
+                        
                     </ul>
                 @endforeach
                 
-
-
-            </div>
-            <div class="col-6"></div>
         </div>
 
 </div>

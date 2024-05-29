@@ -55,6 +55,7 @@ class ListingController extends Controller
         }
 
         $listings = listing::create([
+            'user_id' => auth()->id(),
             'type' => $request->type,
             'style' => $request->style,
             'image' => 'images/' . $filename,

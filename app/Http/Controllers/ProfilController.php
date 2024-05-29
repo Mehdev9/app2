@@ -9,7 +9,8 @@ class ProfilController extends Controller
 {
         public function index()
         {
-            $listings = listing::all();
+            $user = auth()->user();
+            $listings = $user->listings;
             return view('profil', compact('listings'));
         }
 

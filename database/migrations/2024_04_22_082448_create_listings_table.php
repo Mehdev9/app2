@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id')->unsigned();
             $table->string('type');
             $table->string('style');
             $table->string('image');
@@ -23,6 +24,8 @@ return new class extends Migration
             $table->string('desc');
             $table->string('motClef');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
